@@ -15,10 +15,18 @@ function getCurrentTime(){
     let mi=currTime.getMinutes();
     let s=currTime.getSeconds();
     let state="AM"
-    if(h>11&&h!=24){
+    if(h==0){
+        h=h+12
+        
+        
+    }
+    if(h==12){
+        state="PM";
+    }
+    if(h>12&&h!=24){
         h=h-12
         state="PM"
-        return h+':'+mi+':'+s+state
+       
     }
     return h+':'+mi+':'+s+state
    
